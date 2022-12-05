@@ -1,5 +1,5 @@
 # Trabalho Interdisciplinar - Website FisioNorte
-## Membros do grupo:
+## Membros do grupo
 ```
 Gabriel Afonso Casado Arrais 
 Gabriel Bonil da Silva
