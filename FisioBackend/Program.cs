@@ -8,8 +8,21 @@ public class Program
     {
         WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
         
+        builder.Services.AddCors();
+
         // adicionar middlewares (serviços)
         builder.Services.AddControllers();
+
+        builder.Services.AddCors(option =>
+            option.AddPolicy(name: "MyAllowSpecificOrigins",
+             builder =>
+             {
+                 builder
+                     .AllowAnyMethod()
+                     .AllowAnyHeader()
+                     .AllowAnyOrigin();
+             }));
+
 
         // singleton ou transient
         //builder.Services.AddDbContext<BDFisio>(option => option.UseInMemoryDatabase("db"));
@@ -27,6 +40,8 @@ public class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
+
+        app.UseCors("MyAllowSpecificOrigins");
 
         // usar middlewares (adiciona no pipeline de execução)
         app.MapControllers();

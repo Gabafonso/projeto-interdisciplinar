@@ -1,0 +1,184 @@
+@page "/conta/{id:int}"
+@inject HttpClient Http 
+@inject NavigationManager Navigation
+
+    <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav container"><a id="logo-container" href="#" class="brand-logo"><img src="images/LogoFisioNorte2.png" style="height: 80px;"></a>
+      <!-- Dropdown Structure -->
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a @onclick="GoToLogin">Login</a></li>
+        <li><a @onclick="GoToCadastro">Cadastro</a></li>
+        <li class="divider"></li>
+        <li><a href="conta">Perfil</a></li>
+      </ul>
+
+      <!-- Dropdown Structure -->
+      <ul id="dropdown2" class="dropdown-content">
+        <li><a @onclick="GoToLogin">Login</a></li>
+        <li><a @onclick="GoToCadastro">Cadastro</a></li>
+        <li class="divider"></li>
+        <li><a href="conta">Perfil</a></li>
+      </ul>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Serviços</a></li>
+        <li><a @onclick="GoToPagamento">Pagamentos</a></li>
+        <!-- <li><a href="#">Conta</a></li> -->
+        <!-- Dropdown Trigger -->
+        <li>
+          @* <a class="dropdown-trigger" href="#!" data-target="dropdown1">Conta<i class="material-icons right">arrow_drop_down</i></a> *@
+            <div class="dropdown1">
+              <button class="dropbtn" style="background-color: rgba(0, 0, 0, 0.1);">Conta</button>
+              <div class="dropdown1-content">
+                <a @onclick="GoToLogin">Login</a>
+                <a @onclick="GoToCadastro">Cadastro</a>
+                <a href="conta">Perfil</a>
+              </div>
+            </div>
+        </li>
+      </ul>
+
+      @* <ul id="nav-mobile" class="sidenav">
+        <li class="active"><a href="#">Serviços</a></li>
+        <li><a @onclick="GoToPagamento">Pagamentos</a></li>
+        <!-- <li><a href="#">Conta</a></li> -->
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Conta<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a> *@
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="section">
+
+      <h1 class="header center orange-text">Perfil</h1>
+      
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <label class="login__label">
+                <span class="span-active">nome</span>
+                <input type="text" name="nome" class="input" @bind="Humano.Nome">
+              </label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">email</i>
+              <label class="login__label">
+                <span class="span-active">email</span>
+                <input type="email" name="email" class="input" @bind="Humano.Email">
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">person</i>
+              <label class="login__label">
+                <span class="span-active">cpf</span>
+                <input type="text" name="cpf" class="input" disabled @bind="Humano.CPF">
+              </label>
+              @* <input id="icon_cpf" type="text" class="validate" disabled value="999.999.999-99">
+              <label for="icon_cpf">Cpf</label> *@
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">phone</i>
+              <label class="login__label">
+                <span class="span-active">telefone</span>
+                <input type="tel" name="telefone" class="input" @bind="Humano.Telefone">
+              </label>
+              @* <input id="icon_telephone" type="tel" class="validate" value="(99)99999-9999">
+              <label for="icon_telephone">Telefone</label> *@
+            </div>
+          </div>
+        </form>
+      </div>
+      <button @onclick="Update">Alterar</button>
+      <button @onclick="Delete">Delete</button>
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col m4 s12">
+          <a href="https://www.facebook.com/people/Fisionorte/100063578076626/" style="color: White;">
+            <h5>Facebook</h5>
+          </a>
+          <img src="../images/2021_Facebook_icon.svg.png" style="height: 100px;">
+
+
+        </div>
+        <div class="col m4 s12">
+          <a href="https://l.instagram.com/?u=https%3A%2F%2Fwa.me%2F551730165047&e=ATOk0pPzphZbzJEBooNsHnprmse4HA3Xrr_KbbGVMOQCL1acki9JgO3cSpGMUeCwWCgtC0RrcMRwDhH-&s=1" style="color: White;">
+            <h5>Whatsapp</h5>
+          </a>
+          <img src="../images/zap.png" style="height: 100px;">
+        </div>
+
+        <div class="col m4 s12">
+          <a href="https://www.instagram.com/fisionorte/?hl=pt" style="color: White;">
+            <h5>Instagram</h5>
+          </a>
+          <img src="../images/insta.png" style="height: 100px;">
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="#">IT Specialists</a>
+      </div>
+    </div>
+  </footer>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private void GoToIndex(){
+        Navigation.NavigateTo("/");
+    }
+    private void GoToLogin(){
+        Navigation.NavigateTo("login");
+    }
+    private void GoToCadastro(){
+        Navigation.NavigateTo("cadastro");
+    }
+    private void GoToPagamento(){
+        Navigation.NavigateTo("pagamento");
+    }
+
+    @* public string Nome { get; set; }
+    public string Email { get; set; }
+    public string CPF { get; set; }
+    public string Telefone { get; set; }
+    public string Senha { get; set; } *@
+    public Pessoa Humano { get; set; }
+    
+    protected override async Task OnInitializedAsync()
+    {
+        Humano = await Http.GetFromJsonAsync<Pessoa>($"cliente/{Id}");
+    }
+
+    private async void Update(){
+      
+      await Http.PutAsJsonAsync<Pessoa>($"cliente/{Id}", Humano);
+      @* Navigation.NavigateTo("conta"); *@
+    }
+
+    private async void Delete(){
+      
+      await Http.DeleteAsync($"cliente/{Id}");
+      Navigation.NavigateTo("/");
+    }
+
+    public class Pessoa
+    {
+        public string Nome { get; set; }
+        public string Email { get; set; }
+        public string CPF { get; set; }
+        public string Telefone { get; set; }
+    }
+
+}

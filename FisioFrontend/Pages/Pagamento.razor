@@ -1,0 +1,170 @@
+@page "/pagamento"
+@inject HttpClient Http 
+@inject NavigationManager Navigation
+
+    <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav container"><a id="logo-container" href="#" class="brand-logo"><img src="images/LogoFisioNorte2.png" style="height: 80px;"></a>
+      <!-- Dropdown Structure -->
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a @onclick="GoToLogin">Login</a></li>
+        <li><a @onclick="GoToCadastro">Cadastro</a></li>
+        <li class="divider"></li>
+        <li><a @onclick="GoToConta">Perfil</a></li>
+      </ul>
+
+      <!-- Dropdown Structure -->
+      <ul id="dropdown2" class="dropdown-content">
+        <li><a @onclick="GoToLogin">Login</a></li>
+        <li><a @onclick="GoToCadastro">Cadastro</a></li>
+        <li class="divider"></li>
+        <li><a @onclick="GoToConta">Perfil</a></li>
+      </ul>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a @onclick="GoToIndex">Serviços</a></li>
+        <li class="active"><a href="pagamento">Pagamentos</a></li>
+        <!-- <li><a href="#">Conta</a></li> -->
+        <!-- Dropdown Trigger -->
+        <li>
+          @* <a class="dropdown-trigger" href="#!" data-target="dropdown1">Conta<i class="material-icons right">arrow_drop_down</i></a> *@
+            <div class="dropdown1">
+              <button class="dropbtn">Conta</button>
+              <div class="dropdown1-content">
+                <a @onclick="GoToLogin">Login</a>
+                <a @onclick="GoToCadastro">Cadastro</a>
+                <a @onclick="GoToConta">Perfil</a>
+              </div>
+            </div>
+        </li>
+      </ul>
+
+      @* <ul id="nav-mobile" class="sidenav">
+        <li class="active"><a href="#">Serviços</a></li>
+        <li><a @onclick="GoToPagamento">Pagamentos</a></li>
+        <!-- <li><a href="#">Conta</a></li> -->
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Conta<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a> *@
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="section" style="max-height: max-content; min-height: 500px;">
+      <h1 class="header center orange-text">Pagamentos</h1>
+
+
+      <ul class="collection">
+        <li class="collection-item">Pagamento Pendente </li>
+        <li class="collection-item">Pagamento Atrasado </li>
+        <li class="collection-item">Pagamento Efetuado </li>
+        <li class="collection-item"><div>Teste<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle red">play_arrow</i>
+          <span class="title">Title</span>
+          <p>First Line <br>
+            Second Line
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+        </li>
+      </ul>
+
+      <div class="pagamentos">
+        <div class="pagamento-item">
+          <i class="small material-icons">access_time</i>
+          <div style="flex-direction: column; ">
+            <div class="situacao">Pagamento Pendente</div>
+            <div class="data">1/12/2022</div> 
+          </div>
+        </div>
+        <div class="pagamento-item">
+          <i class="small material-icons">access_time</i>
+          <div style="flex-direction: column; ">
+            <div class="situacao">Pagamento Pendente</div>
+            <div class="data">1/12/2022</div> 
+          </div>
+        </div>
+        <div>
+          <i class="material-icons">check</i>
+          <i class="material-icons">done</i>
+        </div>
+        <div>
+          <i class="material-icons">clear</i>
+          <i class="material-icons">close</i>
+          <i class="material-icons">error</i>
+          <i class="material-icons">error_outline</i>
+        </div>
+      </div>
+      
+      <button @onclick="CreatePagamento">Adicionar Conta</button>
+      <button>Pagar Conta</button>
+
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col m4 s12">
+          <a href="https://www.facebook.com/people/Fisionorte/100063578076626/" style="color: White;">
+            <h5>Facebook</h5>
+          </a>
+          <img src="../images/2021_Facebook_icon.svg.png" style="height: 100px;">
+
+
+        </div>
+        <div class="col m4 s12">
+          <a href="https://l.instagram.com/?u=https%3A%2F%2Fwa.me%2F551730165047&e=ATOk0pPzphZbzJEBooNsHnprmse4HA3Xrr_KbbGVMOQCL1acki9JgO3cSpGMUeCwWCgtC0RrcMRwDhH-&s=1" style="color: White;">
+            <h5>Whatsapp</h5>
+          </a>
+          <img src="../images/zap.png" style="height: 100px;">
+        </div>
+
+        <div class="col m4 s12">
+          <a href="https://www.instagram.com/fisionorte/?hl=pt" style="color: White;">
+            <h5>Instagram</h5>
+          </a>
+          <img src="../images/insta.png" style="height: 100px;">
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="#">IT Specialists</a>
+      </div>
+    </div>
+  </footer>
+
+@code {
+    private void GoToIndex(){
+        Navigation.NavigateTo("/");
+    }
+    private void GoToLogin(){
+        Navigation.NavigateTo("login");
+    }
+    private void GoToCadastro(){
+        Navigation.NavigateTo("cadastro");
+    }
+    private void GoToConta(){
+        Navigation.NavigateTo("conta");
+    }
+
+    private async void CreatePagamento()
+    {
+        var game = new GameCreateDTO {
+            @* Name = Name, *@
+            Status = true,
+            UserId = 1
+        };
+
+        await Http.PostAsJsonAsync<GameCreateDTO>("game", game);
+        Navigation.NavigateTo("games");
+    }
+    
+    public class GameCreateDTO
+    {
+        public int UserId { get; set; }
+        @* public string Name { get; set; } *@
+        public bool Status { get; set; }
+    }
+}

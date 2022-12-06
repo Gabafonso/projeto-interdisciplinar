@@ -21,6 +21,17 @@ public class ClienteController : ControllerBase
         // select * from Games
         return Ok(db.Clientes.ToList());
     }
+    [HttpGet]
+    [Route("{id}")]
+    public ActionResult PegarPessoa(int id)
+    {
+        var cliente = db.Clientes.Find(id);
+        if (cliente == null){
+            return NotFound();
+        } else {
+            return Ok(cliente);
+        }
+    }
 
     // método Post para criar o objeto e incluí-lo na lista
     [HttpPost]
@@ -51,6 +62,7 @@ public class ClienteController : ControllerBase
     }
 
     [HttpPut]
+    [Route("{id}")]
     public ActionResult Update(int id, Cliente cliente) // O CLIENTE QUE ME PASSOU
     {
         Cliente? _cliente = db.Clientes.Find(id); // procura-se cliente desatualizado
@@ -64,9 +76,25 @@ public class ClienteController : ControllerBase
         _cliente.Status = cliente.Status;
         _cliente.Telefone = cliente.Telefone;
         _cliente.Email = cliente.Email;
-        _cliente.Senha = cliente.Senha;
         db.SaveChanges();
         return Ok("Cliente atualizado");
-
     }
+
+    [HttpPost]
+    [Route("login")]
+    public ActionResult Login(LoginDTO request)
+    {
+        var pessoa = db.Pessoas.Where(p => p.CPF.Equals(request.CPF) && p.Senha.Equals(request.Senha)).FirstOrDefault();
+        if (pessoa == null){
+            return NotFound("Não Achou");
+        } else {
+            return Ok(pessoa.Id);
+        }
+    }
+}
+
+public class LoginDTO
+{
+    public string CPF { get; set; }
+    public string Senha { get; set; }
 }

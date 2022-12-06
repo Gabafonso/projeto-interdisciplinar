@@ -1,0 +1,74 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.pagamento-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: lightgray;
+  width: fit-content;
+  padding: 0px 10px 0px 5px;
+  border-radius: 10px;
+  border: solid black 0.5px;
+}
+
+/* Style The Dropdown1 Button */
+.dropbtn {
+  background-color: #29b6f6;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  height: 64px;
+}
+
+/* The container <div> - needed to position the dropdown1 content */
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown1 Content (Hidden by Default) */
+.dropdown1-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown1 */
+.dropdown1-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown1 links on hover */
+.dropdown1-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown1 menu on hover */
+.dropdown1:hover .dropdown1-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown1 button when the dropdown1 content is shown */
+.dropdown1:hover .dropbtn {
+  background-color: rgba(0, 0, 0, 0.1);
+}

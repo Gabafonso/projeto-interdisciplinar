@@ -1,0 +1,141 @@
+﻿@page "/"
+@inject NavigationManager Navigation
+
+    <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav container"><a id="logo-container" href="#" class="brand-logo"><img src="images/LogoFisioNorte2.png" style="height: 80px;"></a>
+      <!-- Dropdown Structure -->
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a @onclick="GoToLogin">Login</a></li>
+        <li><a @onclick="GoToCadastro">Cadastro</a></li>
+        <li class="divider"></li>
+        <li><a @onclick="GoToConta">Perfil</a></li>
+      </ul>
+
+      <!-- Dropdown Structure -->
+      <ul id="dropdown2" class="dropdown-content">
+        <li><a @onclick="GoToLogin">Login</a></li>
+        <li><a @onclick="GoToCadastro">Cadastro</a></li>
+        <li class="divider"></li>
+        <li><a @onclick="GoToConta">Perfil</a></li>
+      </ul>
+
+      <ul class="right hide-on-med-and-down">
+        <li class="active"><a href="#">Serviços</a></li>
+        <li><a @onclick="GoToPagamento">Pagamentos</a></li>
+        <!-- <li><a href="#">Conta</a></li> -->
+        <!-- Dropdown Trigger -->
+        <li>
+          @* <a class="dropdown-trigger" href="#!" data-target="dropdown1">Conta<i class="material-icons right">arrow_drop_down</i></a> *@
+            <div class="dropdown1">
+              <button class="dropbtn">Conta</button>
+              <div class="dropdown1-content">
+                <a @onclick="GoToLogin">Login</a>
+                <a @onclick="GoToCadastro">Cadastro</a>
+                <a @onclick="GoToConta">Perfil</a>
+              </div>
+            </div>
+        </li>
+      </ul>
+
+      @* <ul id="nav-mobile" class="sidenav">
+        <li class="active"><a href="#">Serviços</a></li>
+        <li><a @onclick="GoToPagamento">Pagamentos</a></li>
+        <!-- <li><a href="#">Conta</a></li> -->
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Conta<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a> *@
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="section">
+      <h1 class="header center orange-text">Serviços</h1>
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <!-- <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2> -->
+            <h2 class="center light-blue-text"><img src="images/Treino Funcional.jpg" style="width: 250px; height: 250px;"></h2>
+            <h5 class="center">Treino Funcional</h5>
+
+            <p class="light">O treinamento funcional estimula e melhora o sistema respiratório; Ele também auxilia na coordenação motora, pois é preciso se manter em certas posições por determinados períodos, exigindo concentração e controle sobre o corpo; O treino funcional aumenta a flexibilidade do praticante.</p>
+            <!-- <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p> -->
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <!-- <h2 class="center light-blue-text"><i class="material-icons">group</i></h2> -->
+            <h2 class="center light-blue-text"><img src="images/Fisioterapia.jpg" style="width: 250px; height: 250px;"></h2>
+            <h5 class="center">Fisioterapia</h5>
+
+            <p class="light">A fisioterapia é um método de tratamento que visa diagnosticar, prevenir e recuperar pacientes com patologias e distúrbios relacionados ao movimento do corpo, como alterações genéticas, ortopédicas, musculares, cardiopulmonares e neurológicas. Além disso, é eficaz na prevenção de lesões, traumas ou enfermidades, devolvendo e melhorando a qualidade de vida do paciente através do desenvolvimento da integridade de sistemas, órgãos e funções em geral por meio de exercícios terapêuticos.</p>
+            <!-- <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p> -->
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <!-- <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2> -->
+            <h2 class="center light-blue-text"><img src="images/Pilates.jpg" style="width: 250px; height: 250px;"></h2>
+            <h5 class="center">Pilates</h5>
+
+            <p class="light">O pilates é um método de treinamento que pode ser realizado por pessoas de todas as idades e que pode trazer diversos benefícios para a saúde, como melhora da coordenação motora, aumento da flexibilidade e mobilidade, melhora do equilíbrio e da postura e da capacidade cardiorrespiratória.</p>
+            <!-- <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col m4 s12">
+          <a href="https://www.facebook.com/people/Fisionorte/100063578076626/" style="color: White;">
+            <h5>Facebook</h5>
+          </a>
+          <img src="images/2021_Facebook_icon.svg.png" style="height: 100px;">
+
+
+        </div>
+        <div class="col m4 s12">
+          <a href="https://l.instagram.com/?u=https%3A%2F%2Fwa.me%2F551730165047&e=ATOk0pPzphZbzJEBooNsHnprmse4HA3Xrr_KbbGVMOQCL1acki9JgO3cSpGMUeCwWCgtC0RrcMRwDhH-&s=1" style="color: White;">
+            <h5>Whatsapp</h5>
+          </a>
+          <img src="images/zap.png" style="height: 100px;">
+        </div>
+
+        <div class="col m4 s12">
+          <a href="https://www.instagram.com/fisionorte/?hl=pt" style="color: White;">
+            <h5>Instagram</h5>
+          </a>
+          <img src="images/insta.png" style="height: 100px;">
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="#">IT Specialists</a>
+      </div>
+    </div>
+  </footer>
+
+  @code {
+    private void GoToLogin(){
+        Navigation.NavigateTo("login");
+    }
+    private void GoToCadastro(){
+        Navigation.NavigateTo("cadastro");
+    }
+    private void GoToConta(){
+        Navigation.NavigateTo("conta");
+    }
+    private void GoToPagamento(){
+        Navigation.NavigateTo("pagamento");
+    }
+
+  }

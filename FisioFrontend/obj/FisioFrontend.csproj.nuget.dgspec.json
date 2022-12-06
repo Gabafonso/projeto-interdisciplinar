@@ -1,0 +1,87 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Gabriel\\Downloads\\projeto-interdisciplinar-main\\FisioFrontend\\FisioFrontend.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Gabriel\\Downloads\\projeto-interdisciplinar-main\\FisioFrontend\\FisioFrontend.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Gabriel\\Downloads\\projeto-interdisciplinar-main\\FisioFrontend\\FisioFrontend.csproj",
+        "projectName": "FisioFrontend",
+        "projectPath": "C:\\Users\\Gabriel\\Downloads\\projeto-interdisciplinar-main\\FisioFrontend\\FisioFrontend.csproj",
+        "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gabriel\\Downloads\\projeto-interdisciplinar-main\\FisioFrontend\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Radzen.Blazor": {
+              "target": "Package",
+              "version": "[4.2.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
+              "version": "[6.0.10, 6.0.10]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

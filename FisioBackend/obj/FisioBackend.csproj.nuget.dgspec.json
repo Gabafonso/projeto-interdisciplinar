@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\POO\\FisioNorte\\FisioBackend\\FisioBackend.csproj": {}
+    "C:\\Users\\Gabriel\\Downloads\\projeto-interdisciplinar-main\\FisioBackend\\FisioBackend.csproj": {}
   },
   "projects": {
-    "D:\\POO\\FisioNorte\\FisioBackend\\FisioBackend.csproj": {
+    "C:\\Users\\Gabriel\\Downloads\\projeto-interdisciplinar-main\\FisioBackend\\FisioBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\POO\\FisioNorte\\FisioBackend\\FisioBackend.csproj",
+        "projectUniqueName": "C:\\Users\\Gabriel\\Downloads\\projeto-interdisciplinar-main\\FisioBackend\\FisioBackend.csproj",
         "projectName": "FisioBackend",
-        "projectPath": "D:\\POO\\FisioNorte\\FisioBackend\\FisioBackend.csproj",
-        "packagesPath": "C:\\Users\\MAQUINA\\.nuget\\packages\\",
-        "outputPath": "D:\\POO\\FisioNorte\\FisioBackend\\obj\\",
+        "projectPath": "C:\\Users\\Gabriel\\Downloads\\projeto-interdisciplinar-main\\FisioBackend\\FisioBackend.csproj",
+        "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gabriel\\Downloads\\projeto-interdisciplinar-main\\FisioBackend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\MAQUINA\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -80,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
